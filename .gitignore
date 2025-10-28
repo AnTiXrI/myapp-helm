@@ -1,0 +1,4 @@
+__pycahe__/
+*.pyc
+.env
+.DS_Store

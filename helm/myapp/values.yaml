@@ -1,0 +1,33 @@
+# Default values for myapp.
+
+replicaCount: 3
+
+image:
+  repository: myapp
+  tag: latest
+  pullPolicy: Never  # Для Minikube
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30000
+
+redis:
+  enabled: true
+  image: redis:7-alpine
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "50m"
+  limits:
+    memory: "128Mi"
+    cpu: "100m"
+
+autoscaling:
+  enabled: false
+
+environment: "production"
